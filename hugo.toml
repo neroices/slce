@@ -1,5 +1,5 @@
 title = "neroices"
-baseURL = 'https://slce.moe/'
+baseURL = 'https://notes.slce.moe/'
 languageCode = 'en-us'
 theme = "hugo-blog-awesome"
 defaultContentLanguage = "en-us"
