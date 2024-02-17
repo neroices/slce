@@ -4,8 +4,10 @@ date = 2024-02-16T22:35:02+07:00
 toc = false
 +++
 
-# Intro
-The error message `Startup failed: proxy: udp: listen udp: lookup localhost on <ip>:53: no such host` indicates that a program trying to start encountered an issue resolving the hostname `localhost` on port 53, which is typically used for DNS (Domain Name System) lookup. For example, I got an error when trying to start NextDNS service on my computer.
+```
+Startup failed: proxy: udp: listen udp: lookup localhost on <ip>:53: no such host
+``` 
+This indicates that a program trying to start encountered an issue resolving the hostname `localhost` on port 53, which is typically used for DNS (Domain Name System) lookup. For example, I got an error when trying to start NextDNS service on my computer.
 ```
 Feb 16 21:53:01 void systemd[1]: Started NextDNS DNS53 to DoH proxy..
 Feb 16 21:53:01 void nextdns[593]: Starting NextDNS 1.42.0/linux on localhost:53
@@ -32,8 +34,8 @@ Feb 16 21:53:04 void systemd[1]: nextdns.service: Main process exited, code=exit
 Feb 16 21:53:04 void systemd[1]: nextdns.service: Failed with result 'exit-code'.
 ```
 
-# Tinkering
-First, disable `systemd-resolved`. This system setting can interfere with what you're about to do. Disabling it gives you more control over your network configuration.
+# Workarounds
+First, if you use `systemd`, disable `systemd-resolved`. This system setting can interfere with what you're about to do. Disabling it gives you more control over your network configuration.
 
 - Check `/etc/hosts`
 ```
@@ -43,12 +45,11 @@ First, disable `systemd-resolved`. This system setting can interfere with what y
  
 
 ```
-
-- Add this code to your `/etc/hosts` file
+You can see there's no configuration on my `/etc/hosts`, if you have the same output, add this code to your `/etc/hosts` file:
 ```
 127.0.0.1   localhost
 ::1         localhost
-127.0.1.1   myhostname.localdomain  myhostname
+127.0.1.1   yourhostname.localdomain  yourhostname
 ```
 
 It should be like this
@@ -59,7 +60,7 @@ It should be like this
 
 127.0.0.1   localhost
 ::1         localhost
-127.0.1.1   myhostname.localdomain  myhostname
+127.0.1.1   yourhostname.localdomain  yourhostname
 ```
 Here's the result
 
