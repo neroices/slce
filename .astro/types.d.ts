@@ -140,6 +140,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"turn-off-annoying-rotation-android/index.md": {
+	id: "turn-off-annoying-rotation-android/index.md";
+  slug: "turn-off-annoying-rotation-android";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 };
 "spec": {
 "about.md": {
