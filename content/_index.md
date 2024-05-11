@@ -1,4 +1,0 @@
----
-title: "~/"
-author : "Hugo Authors"
----
