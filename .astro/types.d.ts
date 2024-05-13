@@ -131,28 +131,28 @@ declare module 'astro:content' {
   slug: "awk";
   body: string;
   collection: "posts";
-  data: any
-} & { render(): Render[".md"] };
-"fear-of-public-speaking/index.md": {
-	id: "fear-of-public-speaking/index.md";
-  slug: "fear-of-public-speaking";
-  body: string;
-  collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "no-such-host/index.md": {
 	id: "no-such-host/index.md";
   slug: "no-such-host";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"public-speaking/index.md": {
+	id: "public-speaking/index.md";
+  slug: "public-speaking";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "turn-off-annoying-rotation-android/index.md": {
 	id: "turn-off-annoying-rotation-android/index.md";
   slug: "turn-off-annoying-rotation-android";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 };
 "spec": {
@@ -173,5 +173,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("../src/content/config.js");
 }

@@ -1,5 +1,5 @@
 ---
-title: 'My Fear of Public Speaking'
+title: 'About Public Speaking'
 description: 'Public speaking?'
 published: 2024-02-25
 tags: [notes]
