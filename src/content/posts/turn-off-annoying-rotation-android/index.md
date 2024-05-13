@@ -28,6 +28,6 @@ This guide will help you ditch those rotation suggestion pop-ups on your Android
    ```
    settings put secure show_rotation_suggestions 0
    ```
-   That's it! You've successfully silenced those pesky rotation suggestions.
+   That's it!
 
-Now you can freely flip your phone without any judgmental pop-ups telling you how to hold it! 
+Now you can freely flip your phone without any judgmental pop-ups telling you how to hold it. 
